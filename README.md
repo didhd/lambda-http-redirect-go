@@ -1,7 +1,7 @@
-# lambda-http-forward-go
-*Lambda HTTP Forward - Go*
+# lambda-http-redirect-go
+*Lambda HTTP redirect - Go*
 
-This Go application demonstrates a Lambda function that acts as a proxy between the client and a target HTTP service. The function receives an incoming Application Load Balancer (ALB) event, forwards the request to the target HTTP service, and then returns the service's response to the client. 
+This Go application demonstrates a Lambda function that acts as a proxy between the client and a target HTTP service. The function receives an incoming Application Load Balancer (ALB) event, redirects the request to the target HTTP service, and then returns the service's response to the client. 
 
 ![image](assets/apigw.png)
 
@@ -23,7 +23,7 @@ To deploy this Lambda function, follow these steps:
 ### 4. Deploy the Lambda function using the AWS Management Console or the AWS CLI: 
 - Create a new Lambda function with the "Go 1.x" runtime. - Upload the "main.zip" file as the function package.
 - Set the handler as "main". - Grant the Lambda function the necessary permissions. 
-- Create an ALB Target Group and configure it to forward requests to your Lambda function. 
+- Create an ALB Target Group and configure it to redirect requests to your Lambda function. 
 - Configure your Application Load Balancer to route requests to the Target Group. 
 
 or Using AWS CLI:
