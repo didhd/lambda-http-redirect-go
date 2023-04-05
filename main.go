@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 )
@@ -11,10 +13,10 @@ func HandleRequest(request events.ALBTargetGroupRequest) (events.ALBTargetGroupR
 	statusCode := 307 // Change this to 308 for a 308 redirect
 
 	response := events.ALBTargetGroupResponse{
-		StatusCode: statusCode,
+		StatusCode:        statusCode,
 		StatusDescription: "307 Temporary Redirect", // Change this to "308 Permanent Redirect" for a 308 redirect
 		Headers: map[string]string{
-			"Location": redirectURL,
+			"Location":     redirectURL,
 			"Content-Type": "text/plain",
 		},
 		Body: "Redirecting...",
